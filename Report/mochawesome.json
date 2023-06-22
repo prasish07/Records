@@ -1,0 +1,478 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 11,
+    "passes": 9,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-06-22T13:12:55.059Z",
+    "end": "2023-06-22T13:12:55.207Z",
+    "duration": 148,
+    "testsRegistered": 11,
+    "passPercent": 81.81818181818183,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38df3e44-fd03-4fd9-b746-d71fd6fc6be6",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "152e8e24-0559-4581-aa3d-35a969004895",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\getAll.record.controller.test.js",
+          "file": "\\test-case\\getAll.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "b72a184d-e327-48d2-be6c-050050bcea39",
+              "title": "Get /record",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\getAll.record.controller.test.js",
+              "file": "\\test-case\\getAll.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should get all the record of database",
+                  "fullTitle": "Record Controller Get /record Should get all the record of database",
+                  "timedOut": false,
+                  "duration": 38,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await chai.request(app).get(\"/api/v1/record\");\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"records\");\nexpect(res.body.records).to.be.an.instanceof(Array);",
+                  "err": {},
+                  "uuid": "38fe9d17-3fe0-4ba6-b6cb-3aafa1276351",
+                  "parentUUID": "b72a184d-e327-48d2-be6c-050050bcea39",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "38fe9d17-3fe0-4ba6-b6cb-3aafa1276351"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 38,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "994e38bc-5954-4c2f-aa23-a17516ebbeba",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\getById.record.controller.test.js",
+          "file": "\\test-case\\getById.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "8c76fa6e-85af-4a2b-adf7-0111a1a4e1cb",
+              "title": "GET /record/:id",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\getById.record.controller.test.js",
+              "file": "\\test-case\\getById.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should get a record by ID",
+                  "fullTitle": "Record Controller GET /record/:id Should get a record by ID",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordId = 22;\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"record\");\nexpect(res.body.record).to.be.an.instanceof(Object);",
+                  "err": {},
+                  "uuid": "577e1a03-717f-4e8d-81a2-0ead4bb1f304",
+                  "parentUUID": "8c76fa6e-85af-4a2b-adf7-0111a1a4e1cb",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should throw 'Record not found' error for non-existent ID",
+                  "fullTitle": "Record Controller GET /record/:id Should throw 'Record not found' error for non-existent ID",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordId = 1;\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
+                  "err": {},
+                  "uuid": "16e5754f-2555-4216-b19a-31f5ac92339d",
+                  "parentUUID": "8c76fa6e-85af-4a2b-adf7-0111a1a4e1cb",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should handle internal server errors",
+                  "fullTitle": "Record Controller GET /record/:id Should handle internal server errors",
+                  "timedOut": false,
+                  "duration": 6,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordId = 22;\nsinon.stub(Record, \"findByPk\").throws(new Error(\"Database error\"));\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(500);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record fetch failed\");\nRecord.findByPk.restore();",
+                  "err": {},
+                  "uuid": "0356b708-f54e-429b-93c9-773f4b3db2ec",
+                  "parentUUID": "8c76fa6e-85af-4a2b-adf7-0111a1a4e1cb",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "577e1a03-717f-4e8d-81a2-0ead4bb1f304",
+                "16e5754f-2555-4216-b19a-31f5ac92339d",
+                "0356b708-f54e-429b-93c9-773f4b3db2ec"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 20,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d4415f1b-3ed4-44b1-9779-e61497370e1e",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\post.record.controller.test.js",
+          "file": "\\test-case\\post.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "c6317ae4-5b3a-4a3e-8198-6e13e27bd432",
+              "title": "POST /record",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\post.record.controller.test.js",
+              "file": "\\test-case\\post.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should create a new record",
+                  "fullTitle": "Record Controller POST /record Should create a new record",
+                  "timedOut": false,
+                  "duration": 26,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordData = {\n  name: \"someone\",\n  email: \"example@gmail.com\",\n  number: \"1234567890\",\n};\nconst res = await chai\n  .request(app)\n  .post(\"/api/v1/record\")\n  .send(recordData);\nexpect(res).to.have.status(201);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"record\");\nexpect(res.body.record)\n  .to.have.property(\"email\")\n  .to.equal(recordData.email);\nexpect(res.body.record)\n  .to.have.property(\"number\")\n  .to.equal(recordData.number);",
+                  "err": {
+                    "message": "AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 201 but got 500",
+                    "estack": "AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 201 but got 500\n    at Context.<anonymous> (test-case\\post.record.controller.test.js:21:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                    "diff": "- 500\n+ 201\n"
+                  },
+                  "uuid": "1bf9a21a-0fe2-44f6-bc07-b6e448003ef2",
+                  "parentUUID": "c6317ae4-5b3a-4a3e-8198-6e13e27bd432",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should return a 400 error if name,email or number is not provided",
+                  "fullTitle": "Record Controller POST /record Should return a 400 error if name,email or number is not provided",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordData = {\n  email: \"example@gmail.com\",\n};\nconst res = await chai\n  .request(app)\n  .post(\"/api/v1/record\")\n  .send(recordData);\nexpect(res).to.have.status(400);",
+                  "err": {},
+                  "uuid": "6ae21cf8-ff1c-4872-89e2-14cd9c9b0c39",
+                  "parentUUID": "c6317ae4-5b3a-4a3e-8198-6e13e27bd432",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "6ae21cf8-ff1c-4872-89e2-14cd9c9b0c39"
+              ],
+              "failures": [
+                "1bf9a21a-0fe2-44f6-bc07-b6e448003ef2"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 31,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "78007046-7924-4577-a78a-a4ed6f627ea1",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\remove.record.controller.test.js",
+          "file": "\\test-case\\remove.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "8de7e08b-3923-4f26-8657-c15a91c4a9f9",
+              "title": "DELETE /record/:id",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\remove.record.controller.test.js",
+              "file": "\\test-case\\remove.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should remove the exising record",
+                  "fullTitle": "Record Controller DELETE /record/:id Should remove the exising record",
+                  "timedOut": false,
+                  "duration": 4,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const id = 33;\nconst res = await chai.request(app).delete(`/api/v1/record/${id}`);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body)\n  .to.have.property(\"msg\")\n  .to.equal(\"Record deleted successfully\");",
+                  "err": {
+                    "message": "AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404",
+                    "estack": "AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404\n    at Context.<anonymous> (test-case\\remove.record.controller.test.js:14:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                    "diff": "- 404\n+ 200\n"
+                  },
+                  "uuid": "badddffd-5bbf-4de2-9248-2cba0150a36c",
+                  "parentUUID": "8de7e08b-3923-4f26-8657-c15a91c4a9f9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should throw 'Record not found' error for non-existent ID in delete api",
+                  "fullTitle": "Record Controller DELETE /record/:id Should throw 'Record not found' error for non-existent ID in delete api",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordId = 1;\nconst res = await chai.request(app).delete(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
+                  "err": {},
+                  "uuid": "b9de0ca9-2e5e-43aa-a000-2d2242ae1490",
+                  "parentUUID": "8de7e08b-3923-4f26-8657-c15a91c4a9f9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b9de0ca9-2e5e-43aa-a000-2d2242ae1490"
+              ],
+              "failures": [
+                "badddffd-5bbf-4de2-9248-2cba0150a36c"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 9,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "94ab6838-63ff-43e5-9b2d-ea654c04df35",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\update.record.controller.test.js",
+          "file": "\\test-case\\update.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "e354eb9e-be5b-437b-9de4-dbf5ed30c892",
+              "title": "PATCH /record/:id",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\update.record.controller.test.js",
+              "file": "\\test-case\\update.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should update the exising record",
+                  "fullTitle": "Record Controller PATCH /record/:id Should update the exising record",
+                  "timedOut": false,
+                  "duration": 7,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordData = {\n  name: \"modified\",\n  email: \"examplemodified@gmail.com\",\n  number: \"0000000000\",\n};\nconst id = 22;\nconst res = await chai\n  .request(app)\n  .patch(`/api/v1/record/${id}`)\n  .send(recordData);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body)\n  .to.have.property(\"updatedRecord\")\n  .to.have.all.keys(\n    \"id\",\n    \"name\",\n    \"email\",\n    \"number\",\n    \"createdAt\",\n    \"updatedAt\"\n  );\nexpect(res.body.updatedRecord).to.shallowDeepEqual(recordData);",
+                  "err": {},
+                  "uuid": "876f9911-597a-464e-b34e-89eb44362182",
+                  "parentUUID": "e354eb9e-be5b-437b-9de4-dbf5ed30c892",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should throw 'Record not found' error for non-existent ID in update api",
+                  "fullTitle": "Record Controller PATCH /record/:id Should throw 'Record not found' error for non-existent ID in update api",
+                  "timedOut": false,
+                  "duration": 7,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const recordId = 1;\nconst res = await chai.request(app).patch(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
+                  "err": {},
+                  "uuid": "a311af52-092f-4511-8dc1-6a6c13e3652a",
+                  "parentUUID": "e354eb9e-be5b-437b-9de4-dbf5ed30c892",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should throw 'Record update failed' error when database update fails",
+                  "fullTitle": "Record Controller PATCH /record/:id Should throw 'Record update failed' error when database update fails",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Simulate a scenario where database update fails\nsinon.stub(Record, \"findByPk\").resolves({ id: 22 });\nsinon\n  .stub(Record.prototype, \"update\")\n  .throws(new Error(\"Database error\"));\nconst recordId = 22;\nconst recordData = {\n  email: \"examplemodified@gmail.com\",\n  number: \"0000000000\",\n};\nconst res = await chai\n  .request(app)\n  .patch(`/api/v1/record/${recordId}`)\n  .send(recordData);\nexpect(res).to.have.status(500);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record update failed\");\n// Restore the stubbed methods\nsinon.restore();",
+                  "err": {},
+                  "uuid": "ad7b70c2-d39f-47e7-be80-42a1df43ce7c",
+                  "parentUUID": "e354eb9e-be5b-437b-9de4-dbf5ed30c892",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "876f9911-597a-464e-b34e-89eb44362182",
+                "a311af52-092f-4511-8dc1-6a6c13e3652a",
+                "ad7b70c2-d39f-47e7-be80-42a1df43ce7c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 19,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "Report",
+        "": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
