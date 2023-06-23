@@ -11,12 +11,20 @@ const port = 3000 || process.env.PORT;
 const router = require("./routers/index");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorMiddleware = require("./middleware/error-handler");
+const rateLimiter = require("express-rate-limit");
 const helmet = require("helmet");
 const xss = require("xss-clean");
 const cors = require("cors");
 const mongoSanitize = require("express-mongo-sanitize");
 
 // Set up middleware
+app.set("trust proxy", 1);
+app.use(
+  rateLimiter({
+    windowMs: 15 * 60 * 1000,
+    max: 60,
+  })
+);
 app.use(helmet()); // Add security headers
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(xss()); // Prevent cross-site scripting attacks

@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 10,
-    "tests": 11,
-    "passes": 11,
+    "suites": 12,
+    "tests": 12,
+    "passes": 12,
     "pending": 0,
     "failures": 0,
-    "start": "2023-06-23T04:21:22.350Z",
-    "end": "2023-06-23T04:21:22.493Z",
-    "duration": 143,
-    "testsRegistered": 11,
+    "start": "2023-06-23T06:14:13.693Z",
+    "end": "2023-06-23T06:14:13.843Z",
+    "duration": 150,
+    "testsRegistered": 12,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f49e29ed-4a8e-4b5e-aad2-94edfa2803e0",
+      "uuid": "67c1d65c-b50f-4738-957f-b62c0f1016b8",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7d501ebe-2f90-4ed0-8efa-570e4fe5373f",
+          "uuid": "53dbd41b-920f-40a0-bf44-05615db39da0",
           "title": "Record Controller",
           "fullFile": "E:\\NODE.JS\\records\\test-case\\getAll.record.controller.test.js",
           "file": "\\test-case\\getAll.record.controller.test.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "cf556077-32f0-4e7d-9319-3451f528d5ba",
+              "uuid": "3124a756-1132-4514-a3da-762e396f9f97",
               "title": "Get /record",
               "fullFile": "E:\\NODE.JS\\records\\test-case\\getAll.record.controller.test.js",
               "file": "\\test-case\\getAll.record.controller.test.js",
@@ -47,7 +47,7 @@
                   "title": "Should get all the record of database",
                   "fullTitle": "Record Controller Get /record Should get all the record of database",
                   "timedOut": false,
-                  "duration": 40,
+                  "duration": 39,
                   "state": "passed",
                   "speed": "medium",
                   "pass": true,
@@ -56,20 +56,20 @@
                   "context": null,
                   "code": "const res = await chai.request(app).get(\"/api/v1/record\");\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"records\");\nexpect(res.body.records).to.be.an.instanceof(Array);",
                   "err": {},
-                  "uuid": "b7593bc1-ebed-4b55-9142-fee308b07b7e",
-                  "parentUUID": "cf556077-32f0-4e7d-9319-3451f528d5ba",
+                  "uuid": "edd194e1-bc3c-43cf-9415-340011d2f6f9",
+                  "parentUUID": "3124a756-1132-4514-a3da-762e396f9f97",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b7593bc1-ebed-4b55-9142-fee308b07b7e"
+                "edd194e1-bc3c-43cf-9415-340011d2f6f9"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 40,
+              "duration": 39,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -85,7 +85,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "dc1f3a2d-d7c9-446e-a206-f858860bf7b3",
+          "uuid": "21cd53d8-a342-43de-8f3e-172936588210",
           "title": "Record Controller",
           "fullFile": "E:\\NODE.JS\\records\\test-case\\getById.record.controller.test.js",
           "file": "\\test-case\\getById.record.controller.test.js",
@@ -94,7 +94,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "58168d9e-3635-44ba-8ab5-6efcfec6e8e1",
+              "uuid": "a5a4522b-b7ff-415f-9992-9a61c7f27236",
               "title": "GET /record/:id",
               "fullFile": "E:\\NODE.JS\\records\\test-case\\getById.record.controller.test.js",
               "file": "\\test-case\\getById.record.controller.test.js",
@@ -114,8 +114,8 @@
                   "context": null,
                   "code": "const recordId = 22;\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"record\");\nexpect(res.body.record).to.be.an.instanceof(Object);",
                   "err": {},
-                  "uuid": "f447b228-4ded-4da3-8f7e-72b71a6703aa",
-                  "parentUUID": "58168d9e-3635-44ba-8ab5-6efcfec6e8e1",
+                  "uuid": "0b0b0b9c-2f47-4c49-9ef3-684dc6074409",
+                  "parentUUID": "a5a4522b-b7ff-415f-9992-9a61c7f27236",
                   "isHook": false,
                   "skipped": false
                 },
@@ -123,7 +123,7 @@
                   "title": "Should throw 'Record not found' error for non-existent ID",
                   "fullTitle": "Record Controller GET /record/:id Should throw 'Record not found' error for non-existent ID",
                   "timedOut": false,
-                  "duration": 6,
+                  "duration": 5,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -132,8 +132,8 @@
                   "context": null,
                   "code": "const recordId = 1;\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
                   "err": {},
-                  "uuid": "dff96709-338b-440f-8449-b426579abc44",
-                  "parentUUID": "58168d9e-3635-44ba-8ab5-6efcfec6e8e1",
+                  "uuid": "476b64db-5522-4ecf-86a0-57b222025837",
+                  "parentUUID": "a5a4522b-b7ff-415f-9992-9a61c7f27236",
                   "isHook": false,
                   "skipped": false
                 },
@@ -150,22 +150,22 @@
                   "context": null,
                   "code": "const recordId = 22;\nsinon.stub(Record, \"findByPk\").throws(new Error(\"Database error\"));\nconst res = await chai.request(app).get(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(500);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record fetch failed\");\nRecord.findByPk.restore();",
                   "err": {},
-                  "uuid": "3a8c308c-44dd-466f-8722-38eb72ef81a9",
-                  "parentUUID": "58168d9e-3635-44ba-8ab5-6efcfec6e8e1",
+                  "uuid": "60ea4046-9ffc-47a0-8542-8b0f1144be3d",
+                  "parentUUID": "a5a4522b-b7ff-415f-9992-9a61c7f27236",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f447b228-4ded-4da3-8f7e-72b71a6703aa",
-                "dff96709-338b-440f-8449-b426579abc44",
-                "3a8c308c-44dd-466f-8722-38eb72ef81a9"
+                "0b0b0b9c-2f47-4c49-9ef3-684dc6074409",
+                "476b64db-5522-4ecf-86a0-57b222025837",
+                "60ea4046-9ffc-47a0-8542-8b0f1144be3d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 19,
+              "duration": 18,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -181,7 +181,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "216e39af-4a21-4620-ad73-3c0c1bf49d9e",
+          "uuid": "e6634fce-e517-4e44-a8e2-ea201745303a",
           "title": "Record Controller",
           "fullFile": "E:\\NODE.JS\\records\\test-case\\post.record.controller.test.js",
           "file": "\\test-case\\post.record.controller.test.js",
@@ -190,7 +190,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "e40cf4f3-4a25-4725-9282-5fafa1823dab",
+              "uuid": "82430da8-ce89-47e4-93ef-53a75696d0a1",
               "title": "POST /record",
               "fullFile": "E:\\NODE.JS\\records\\test-case\\post.record.controller.test.js",
               "file": "\\test-case\\post.record.controller.test.js",
@@ -201,7 +201,7 @@
                   "title": "Should create a new record",
                   "fullTitle": "Record Controller POST /record Should create a new record",
                   "timedOut": false,
-                  "duration": 21,
+                  "duration": 22,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -210,8 +210,8 @@
                   "context": null,
                   "code": "const recordData = {\n  name: \"someone\",\n  email: \"example@gmail.com\",\n  number: \"1234567890\",\n};\nconst res = await chai\n  .request(app)\n  .post(\"/api/v1/record\")\n  .send(recordData);\nexpect(res).to.have.status(201);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"record\");\nexpect(res.body.record)\n  .to.have.property(\"email\")\n  .to.equal(recordData.email);\nexpect(res.body.record)\n  .to.have.property(\"number\")\n  .to.equal(recordData.number);",
                   "err": {},
-                  "uuid": "dbb8bf84-3112-4479-a651-0dd27e4093dc",
-                  "parentUUID": "e40cf4f3-4a25-4725-9282-5fafa1823dab",
+                  "uuid": "23a055a4-4a3d-4e09-ad3f-43808047662b",
+                  "parentUUID": "82430da8-ce89-47e4-93ef-53a75696d0a1",
                   "isHook": false,
                   "skipped": false
                 },
@@ -219,7 +219,7 @@
                   "title": "Should return a 400 error if name,email or number is not provided",
                   "fullTitle": "Record Controller POST /record Should return a 400 error if name,email or number is not provided",
                   "timedOut": false,
-                  "duration": 6,
+                  "duration": 4,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -228,21 +228,21 @@
                   "context": null,
                   "code": "const recordData = {\n  email: \"example@gmail.com\",\n};\nconst res = await chai\n  .request(app)\n  .post(\"/api/v1/record\")\n  .send(recordData);\nexpect(res).to.have.status(400);",
                   "err": {},
-                  "uuid": "ff13e840-864e-4730-a988-592a11305787",
-                  "parentUUID": "e40cf4f3-4a25-4725-9282-5fafa1823dab",
+                  "uuid": "42d89aba-1323-47e3-b348-bcbaa7857155",
+                  "parentUUID": "82430da8-ce89-47e4-93ef-53a75696d0a1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dbb8bf84-3112-4479-a651-0dd27e4093dc",
-                "ff13e840-864e-4730-a988-592a11305787"
+                "23a055a4-4a3d-4e09-ad3f-43808047662b",
+                "42d89aba-1323-47e3-b348-bcbaa7857155"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 27,
+              "duration": 26,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -258,7 +258,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "5699fc6e-385d-4954-a096-50f9f57d01cc",
+          "uuid": "5732b324-3a42-4d93-a4a1-4ed913ed64dd",
           "title": "Record Controller",
           "fullFile": "E:\\NODE.JS\\records\\test-case\\remove.record.controller.test.js",
           "file": "\\test-case\\remove.record.controller.test.js",
@@ -267,7 +267,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "f56ba135-db76-4596-97e0-17e8ee4b5008",
+              "uuid": "4f93cd6a-f03f-40bf-aacd-6deb143bd05d",
               "title": "DELETE /record/:id",
               "fullFile": "E:\\NODE.JS\\records\\test-case\\remove.record.controller.test.js",
               "file": "\\test-case\\remove.record.controller.test.js",
@@ -278,7 +278,7 @@
                   "title": "Should remove the exising record",
                   "fullTitle": "Record Controller DELETE /record/:id Should remove the exising record",
                   "timedOut": false,
-                  "duration": 7,
+                  "duration": 9,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -287,8 +287,8 @@
                   "context": null,
                   "code": "const id = 33;\nconst res = await chai.request(app).delete(`/api/v1/record/${id}`);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body)\n  .to.have.property(\"msg\")\n  .to.equal(\"Record deleted successfully\");",
                   "err": {},
-                  "uuid": "5626279b-f1ae-46d8-8307-86867fd80268",
-                  "parentUUID": "f56ba135-db76-4596-97e0-17e8ee4b5008",
+                  "uuid": "3744af0b-09d1-4923-b9e9-509a8a1de25b",
+                  "parentUUID": "4f93cd6a-f03f-40bf-aacd-6deb143bd05d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -305,21 +305,21 @@
                   "context": null,
                   "code": "const recordId = 1;\nconst res = await chai.request(app).delete(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
                   "err": {},
-                  "uuid": "fccd03bf-42b4-4de6-841f-0a819b176fc4",
-                  "parentUUID": "f56ba135-db76-4596-97e0-17e8ee4b5008",
+                  "uuid": "8bf7c049-b0b2-4dd3-97de-dc1fef153f07",
+                  "parentUUID": "4f93cd6a-f03f-40bf-aacd-6deb143bd05d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5626279b-f1ae-46d8-8307-86867fd80268",
-                "fccd03bf-42b4-4de6-841f-0a819b176fc4"
+                "3744af0b-09d1-4923-b9e9-509a8a1de25b",
+                "8bf7c049-b0b2-4dd3-97de-dc1fef153f07"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 11,
+              "duration": 13,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -335,7 +335,65 @@
           "_timeout": 2000
         },
         {
-          "uuid": "1f1db8ef-8399-4a46-ad2d-572f746b6462",
+          "uuid": "93a0b479-c585-4008-9fde-adb1f04e85e4",
+          "title": "Record Controller",
+          "fullFile": "E:\\NODE.JS\\records\\test-case\\search.record.controller.test.js",
+          "file": "\\test-case\\search.record.controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "480d9d70-0198-4f3a-91c2-b8c48541f1fd",
+              "title": "GET /api/v1/record/search",
+              "fullFile": "E:\\NODE.JS\\records\\test-case\\search.record.controller.test.js",
+              "file": "\\test-case\\search.record.controller.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should retrieve records based on search criteria",
+                  "fullTitle": "Record Controller GET /api/v1/record/search should retrieve records based on search criteria",
+                  "timedOut": false,
+                  "duration": 6,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Define the search criteria\nconst name = \"john\";\n// Send the request to the search endpoint with the query parameters\nconst res = await chai\n  .request(app)\n  .get(\"/api/v1/record/search\")\n  .query({ name });\n// Assert the response\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body).to.have.property(\"records\");\nexpect(res.body.records).to.be.an.instanceof(Array);\n//check if the retrieved records match the search criteria\nfor (const record of res.body.records) {\n  expect(record.name).to.equal(name);\n}",
+                  "err": {},
+                  "uuid": "041d87a5-85bd-4d2d-aab5-ffac2f61066b",
+                  "parentUUID": "480d9d70-0198-4f3a-91c2-b8c48541f1fd",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "041d87a5-85bd-4d2d-aab5-ffac2f61066b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e87b3008-a8b0-4ece-b34d-7cd4100a8b6a",
           "title": "Record Controller",
           "fullFile": "E:\\NODE.JS\\records\\test-case\\update.record.controller.test.js",
           "file": "\\test-case\\update.record.controller.test.js",
@@ -344,7 +402,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "5b484418-3008-41c8-b3eb-d8ba3a2e6b40",
+              "uuid": "3c1b2127-162c-49c9-afd1-6a138f0db29a",
               "title": "PATCH /record/:id",
               "fullFile": "E:\\NODE.JS\\records\\test-case\\update.record.controller.test.js",
               "file": "\\test-case\\update.record.controller.test.js",
@@ -355,7 +413,7 @@
                   "title": "Should update the exising record",
                   "fullTitle": "Record Controller PATCH /record/:id Should update the exising record",
                   "timedOut": false,
-                  "duration": 9,
+                  "duration": 6,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -364,8 +422,8 @@
                   "context": null,
                   "code": "const recordData = {\n  name: \"modified\",\n  email: \"examplemodified@gmail.com\",\n  number: \"0000000000\",\n};\nconst id = 22;\nconst res = await chai\n  .request(app)\n  .patch(`/api/v1/record/${id}`)\n  .send(recordData);\nexpect(res).to.have.status(200);\nexpect(res.body).to.have.property(\"status\").to.equal(true);\nexpect(res.body)\n  .to.have.property(\"updatedRecord\")\n  .to.have.all.keys(\n    \"id\",\n    \"name\",\n    \"email\",\n    \"number\",\n    \"createdAt\",\n    \"updatedAt\"\n  );\nexpect(res.body.updatedRecord).to.shallowDeepEqual(recordData);",
                   "err": {},
-                  "uuid": "5f9e90f5-384a-496e-b448-5a2f168068a8",
-                  "parentUUID": "5b484418-3008-41c8-b3eb-d8ba3a2e6b40",
+                  "uuid": "476a3250-206f-461c-9f1b-b3526259d24d",
+                  "parentUUID": "3c1b2127-162c-49c9-afd1-6a138f0db29a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -373,7 +431,7 @@
                   "title": "Should throw 'Record not found' error for non-existent ID in update api",
                   "fullTitle": "Record Controller PATCH /record/:id Should throw 'Record not found' error for non-existent ID in update api",
                   "timedOut": false,
-                  "duration": 4,
+                  "duration": 5,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -382,8 +440,8 @@
                   "context": null,
                   "code": "const recordId = 1;\nconst res = await chai.request(app).patch(`/api/v1/record/${recordId}`);\nexpect(res).to.have.status(404);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record not found\");",
                   "err": {},
-                  "uuid": "14396f47-b25e-468e-9106-6aca191399b4",
-                  "parentUUID": "5b484418-3008-41c8-b3eb-d8ba3a2e6b40",
+                  "uuid": "c8f01ac7-b419-490e-b3f5-1563065e9558",
+                  "parentUUID": "3c1b2127-162c-49c9-afd1-6a138f0db29a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -391,7 +449,7 @@
                   "title": "Should throw 'Record update failed' error when database update fails",
                   "fullTitle": "Record Controller PATCH /record/:id Should throw 'Record update failed' error when database update fails",
                   "timedOut": false,
-                  "duration": 4,
+                  "duration": 5,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -400,22 +458,22 @@
                   "context": null,
                   "code": "// Simulate a scenario where database update fails\nsinon.stub(Record, \"findByPk\").resolves({ id: 22 });\nsinon\n  .stub(Record.prototype, \"update\")\n  .throws(new Error(\"Database error\"));\nconst recordId = 22;\nconst recordData = {\n  email: \"examplemodified@gmail.com\",\n  number: \"0000000000\",\n};\nconst res = await chai\n  .request(app)\n  .patch(`/api/v1/record/${recordId}`)\n  .send(recordData);\nexpect(res).to.have.status(500);\nexpect(res.body).to.have.property(\"msg\").to.equal(\"Record update failed\");\n// Restore the stubbed methods\nsinon.restore();",
                   "err": {},
-                  "uuid": "bc335945-35dd-4632-b6aa-b8eb2b075e7c",
-                  "parentUUID": "5b484418-3008-41c8-b3eb-d8ba3a2e6b40",
+                  "uuid": "953897c6-ae3e-413b-bbf5-eb682101856a",
+                  "parentUUID": "3c1b2127-162c-49c9-afd1-6a138f0db29a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5f9e90f5-384a-496e-b448-5a2f168068a8",
-                "14396f47-b25e-468e-9106-6aca191399b4",
-                "bc335945-35dd-4632-b6aa-b8eb2b075e7c"
+                "476a3250-206f-461c-9f1b-b3526259d24d",
+                "c8f01ac7-b419-490e-b3f5-1563065e9558",
+                "953897c6-ae3e-413b-bbf5-eb682101856a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 17,
+              "duration": 16,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000

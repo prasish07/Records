@@ -1,6 +1,8 @@
+// Import required modules
 const { DataTypes } = require("sequelize");
 const sequelize = require("../dbConnect/dbconnect");
 
+// Define the "record" model
 const record = sequelize.define("Records", {
   id: {
     type: DataTypes.INTEGER,
@@ -21,4 +23,5 @@ const record = sequelize.define("Records", {
   },
 });
 
+// Export the "record" model
 module.exports = record;

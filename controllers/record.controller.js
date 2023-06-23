@@ -111,6 +111,31 @@ const removeRecord = async (req, res) => {
   }
 };
 
+//search with particular name or email
+const searchRecords = async (req, res) => {
+  const { name, email } = req.query;
+
+  try {
+    // Construct the search conditions based on the provided query parameters
+    const searchConditions = {};
+    if (name) {
+      searchConditions.name = name;
+    }
+    if (email) {
+      searchConditions.email = email;
+    }
+    // Execute the database query with the search conditions
+    const records = await Record.findAll({
+      where: searchConditions,
+    });
+
+    res.json({ status: true, records });
+  } catch (error) {
+    console.error("Failed to search records:", error);
+    res.status(500).json({ error: "Failed to search records" });
+  }
+};
+
 // export
 module.exports = {
   createRecords,
@@ -118,4 +143,5 @@ module.exports = {
   getSingleRecord,
   updateRecord,
   removeRecord,
+  searchRecords,
 };
