@@ -49,3 +49,7 @@ The project structure is as follows:
 You can view the documentation:
 https://documenter.getpostman.com/view/21285026/2s93z5A54t
 
+# Unit Testing
+For testing you can run---> npm run test or npm run test-report(to generate a report)
+- `And you can view the detail of the test report in the report section and open mochawesome.html`
+
