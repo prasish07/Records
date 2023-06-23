@@ -35,16 +35,6 @@ To run the project, follow these steps:
 ----> npm start
 4. The project will start running, and you will see output indicating that the server is listening on a specific port (e.g., Server listening on port 3000).
 
-# Project Structure
-The project structure is as follows:
-- `app.js`: The main entry point of the application.
-- `DB`: Contain js file to connect to the database
-- `controllers`: Contains js files of all the operation
-- `middleware`: Contains files to validate data and handle error
-- `test-case`: Contains .test.js files to test all the endpoint
-- `routers`: Contains endpoint location
-- `models`: Contains structure of data to store in database
-
 # Documentation
 You can view the documentation:
 https://documenter.getpostman.com/view/21285026/2s93z5A54t
@@ -53,3 +43,25 @@ https://documenter.getpostman.com/view/21285026/2s93z5A54t
 For testing you can run---> npm run test or npm run test-report(to generate a report)
 - `And you can view the detail of the test report in the report section and open mochawesome.html`
 
+# Project Structure
+
+This application's architectural decisions revolve around building a RESTful API using Node.js and Express framework, with a MySQL database and Sequelize as the ORM (Object-Relational Mapping) tool.
+
+`The project structure is as follows:`
+- `app.js`: The main entry point of the application.
+- `DB`: Contain js file to connect to the database
+- `controllers`: The controllers handle the business logic of the API endpoints, performing actions such as creating records, retrieving records, updating records, and deleting records.
+- `middleware`: Various middleware functions are used for request validation and error handling tasks.
+- `test-case`: Contains .test.js files to test all the endpoint
+- `Routers`: Separate routers are used to organize and handle different API endpoints. The routers modularize the code, making it easier to manage and scale the application.
+- `models`: The models define the structure and schema of the database tables using Sequelize. They encapsulate the logic for interacting with the database and provide an abstraction layer.
+- `error`: A custom CustomAPIError class handles and propagates custom API errors, providing consistent error responses with appropriate status codes.
+
+`Challenges faced during the development process include:`
+- `Handling data validation`: Ensuring that the incoming request data is properly validated to maintain data integrity and prevent errors.
+- `Security considerations`: Implementing security measures such as using helmet middleware for setting secure HTTP headers and preventing cross-site scripting (XSS) attacks.
+- `Error handling and debugging`: Implementing robust error handling mechanisms and debugging issues to ensure smooth operation of the API.
+
+`Additional features that have been implemented in this application include:`
+- `Search functionality`: Adding search capabilities to allow users to search for specific records based on certain criteria.
+- `Rate limiting`: Implementing rate limiting to prevent abuse or excessive requests to the API.
