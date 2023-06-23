@@ -5,7 +5,7 @@ const { Sequelize } = require("sequelize");
 const dbName = process.env.NAME;
 const dbUser = process.env.USER;
 const dbPassword = process.env.PASSWORD;
-const dbHost = "localhost";
+const dbHost = process.env.HOST;
 const dbPort = process.env.DATABASEPORT;
 
 // Create a Sequelize instance for the database connection
